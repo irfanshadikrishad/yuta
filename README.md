@@ -1,11 +1,35 @@
 <h3>yuta – CLI tool to download YouTube videos.</h3>
 
-<h4>Commands</h4>
+<h4>How to use yuta?</h4>
 
-| Command                      | Usage                            |
-| ---------------------------- | -------------------------------- |
-| yuta --info _[video_id]_     | Get info of a video by video id. |
-| yuta --download _[video_id]_ | Download a YouTube video by id.  |
-| yuta --help                  | Get the commands if you forgot.  |
+Make your [NodeJs](https://nodejs.org/en) is installed on your device.
 
-follow [@irfanshadikrishad](https://github.com/irfanshadikrishad)
+To install the CLI package run
+
+```bash
+npm i -g yuta
+```
+
+in CMD to install globally.
+
+To get video info from video id
+
+```bash
+yuta --info [videoId]
+```
+
+To download video from video id
+
+```bash
+yuta --download [videoId]
+```
+
+To get help if you forgot the commands
+
+```bash
+yuta --help
+```
+
+<h4>[Note] This might not work on all videos on youtube.</h4>
+
+<h4><a>Thanks for visiting.</a></h4>

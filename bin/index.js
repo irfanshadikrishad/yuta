@@ -24,4 +24,5 @@ try {
   }
 } catch (error) {
   console.log(chalk.redBright(error.message));
+  Usage();
 }
