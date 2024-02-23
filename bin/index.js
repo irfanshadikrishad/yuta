@@ -13,7 +13,8 @@ try {
     "--help": Boolean,
   });
   if (args["--info"]) {
-    getVideoInfo(args["--info"]);
+    console.log("");
+    console.log(await getVideoInfo(args["--info"]));
   } else if (args["--download"]) {
     downloadVideo(args["--download"]);
   } else if (args["--help"]) {

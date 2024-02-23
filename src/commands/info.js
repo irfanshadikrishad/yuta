@@ -77,8 +77,7 @@ export default async function getVideoInfo(videoId) {
         ["Category", category],
         ["Published", publishDate.slice(0, 10)]
       );
-      console.log(table.toString());
-      process.exit(1);
+      return table.toString();
     } else {
       console.log(chalk.redBright(`Invalid Video Id.`));
       Usage();

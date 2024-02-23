@@ -5,7 +5,10 @@ import Usage from "../config/usage.js";
 import os from "os";
 import path from "path";
 import openExplorer from "open-explorer-cross-platform";
+import getVideoInfo from "./info.js";
+import { loading } from "cli-loading-animation";
 
+const { start, stop } = loading("Downloadig...", { clearOnEnd: true });
 const download_directory = path.join(os.homedir() + "\\" + "Downloads");
 
 export default async function downloadVideo(videoId) {
@@ -14,10 +17,15 @@ export default async function downloadVideo(videoId) {
     if (isValidId) {
       const videoInfo = await ytdl.getInfo(videoId);
       const title = videoInfo.videoDetails.title;
+      console.log("");
+      console.log(await getVideoInfo(videoId));
+      console.log("");
+      start();
       ytdl
         .downloadFromInfo(videoInfo)
         .pipe(fs.createWriteStream(`${download_directory}\\${title}.mp4`))
         .on("finish", () => {
+          stop();
           console.log(chalk.cyan(`[downloaded] ${title}`));
           openExplorer(download_directory);
           process.exit(0);

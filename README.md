@@ -1,13 +1,13 @@
-<h3>yuta – CLI tool to download YouTube videos.</h3>
+### yuta – CLI tool to download YouTube videos.
 
-<h4>How to use yuta?</h4>
+#### How to use yuta?
 
 Make your [NodeJs](https://nodejs.org/en) is installed on your device.
 
 To install the CLI package run
 
 ```bash
-npm i -g yuta
+npm install yuta -g
 ```
 
 in CMD to install globally.
@@ -30,6 +30,6 @@ To get help if you forgot the commands
 yuta --help
 ```
 
-<h4>[Note] This might not work on all videos on youtube.</h4>
+#### [Note] This might not work on all videos on youtube.
 
-<h4><a>Thanks for visiting.</a></h4>
+#### Thanks for visiting.
