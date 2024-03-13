@@ -15,6 +15,7 @@ try {
   if (args["--info"]) {
     console.log("");
     console.log(await getVideoInfo(args["--info"]));
+    process.exit(0);
   } else if (args["--download"]) {
     downloadVideo(args["--download"]);
   } else if (args["--help"]) {
