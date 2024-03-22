@@ -24,10 +24,10 @@ let table = new Table({
   style: { "padding-left": 0, "padding-right": 0 },
 });
 
-function abbreviateNumber(number) {
-  const SI_SYMBOL = ["", "k", "M", "G", "T", "P", "E"];
+function abbreviateNumber(number: number) {
+  const SI_SYMBOL: string[] = ["", "k", "M", "G", "T", "P", "E"];
 
-  const tier = (Math.log10(Math.abs(number)) / 3) | 0;
+  const tier: number = (Math.log10(Math.abs(number)) / 3) | 0;
 
   if (tier === 0) return number;
 
@@ -39,21 +39,21 @@ function abbreviateNumber(number) {
   return scaled.toFixed(1) + suffix;
 }
 
-function formatTime(seconds) {
+function formatTime(seconds: number) {
   const hours = Math.floor(seconds / 3600);
   const minutes = Math.floor((seconds % 3600) / 60);
   const remainingSeconds = seconds % 60;
 
-  const formattedHours = String(hours).padStart(2, "0");
-  const formattedMinutes = String(minutes).padStart(2, "0");
-  const formattedSeconds = String(remainingSeconds).padStart(2, "0");
+  const formattedHours: string = String(hours).padStart(2, "0");
+  const formattedMinutes: string = String(minutes).padStart(2, "0");
+  const formattedSeconds: string = String(remainingSeconds).padStart(2, "0");
 
   return `${formattedHours}:${formattedMinutes}:${formattedSeconds}`;
 }
 
 export default async function getVideoInfo(videoId) {
   try {
-    const isValidId = await ytdl.validateID(videoId);
+    const isValidId: boolean = await ytdl.validateID(videoId);
     if (isValidId) {
       const videoInfo = await ytdl.getBasicInfo(videoId);
       const {
@@ -68,12 +68,14 @@ export default async function getVideoInfo(videoId) {
       } = videoInfo.videoDetails;
       table.push(
         ["Title", title],
-        ["Length", formatTime(lengthSeconds)],
+        ["Length", formatTime(Number(lengthSeconds))],
         [
           "Author",
-          `${ownerChannelName} (${abbreviateNumber(author.subscriber_count)})`,
+          `${ownerChannelName} (${abbreviateNumber(
+            Number(author.subscriber_count)
+          )})`,
         ],
-        ["Views", abbreviateNumber(viewCount)],
+        ["Views", abbreviateNumber(Number(viewCount))],
         ["Category", category],
         ["Published", publishDate.slice(0, 10)]
       );

@@ -23,13 +23,13 @@ let usage = new Table({
 });
 
 export default function Usage() {
+  console.log("");
   usage.push(
-    ["", ""],
     ["Commands", "Usage"],
     ["--info [id]", "Get video info from video id."],
-    ["--download [id]", "Download video with video id."],
-    ["--help", "Get the available commands."],
-    ["", ""]
+    ["--download [id]", "To download video with video id."],
+    ["--version", "Get the version."],
+    ["--help", "Get the available commands."]
   );
-  console.log(chalk.grey(usage.toString()));
+  console.log(usage.toString(), "\n");
 }

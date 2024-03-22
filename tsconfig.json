@@ -1,0 +1,10 @@
+{
+  "compilerOptions": {
+    "rootDir": "./",
+    "outDir": "./bin",
+    "module": "NodeNext",
+    "noEmitOnError": true,
+    "moduleResolution": "NodeNext",
+    "allowSyntheticDefaultImports": true
+  }
+}

@@ -2,7 +2,7 @@
 
 #### How to use yuta?
 
-Make your [NodeJs](https://nodejs.org/en) is installed on your device.
+Make sure [NodeJs](https://nodejs.org/en) is installed on your device.
 
 To install the CLI package run
 
@@ -30,6 +30,6 @@ To get help if you forgot the commands
 yuta --help
 ```
 
-#### [Note] This might not work on all videos on youtube.
+#### [Note] This might not work on all videos on youtube like private, regional locked etc.
 
 #### Thanks for visiting.

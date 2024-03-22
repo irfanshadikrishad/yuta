@@ -9,17 +9,15 @@ import getVideoInfo from "./info.js";
 import { loading } from "cli-loading-animation";
 
 const { start, stop } = loading("Downloadig...", { clearOnEnd: true });
-const download_directory = path.join(os.homedir() + "\\" + "Downloads");
+const download_directory: string = path.join(os.homedir() + "\\" + "Downloads");
 
-export default async function downloadVideo(videoId) {
+export default async function downloadVideo(videoId: string) {
   try {
-    const isValidId = ytdl.validateID(videoId);
+    const isValidId: boolean = ytdl.validateID(videoId);
     if (isValidId) {
       const videoInfo = await ytdl.getInfo(videoId);
-      const title = videoInfo.videoDetails.title;
-      console.log("");
-      console.log(await getVideoInfo(videoId));
-      console.log("");
+      const title: string = videoInfo.videoDetails.title;
+      console.log("\n", await getVideoInfo(videoId), "\n");
       start();
       ytdl
         .downloadFromInfo(videoInfo)

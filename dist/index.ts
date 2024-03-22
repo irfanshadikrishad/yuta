@@ -2,15 +2,16 @@
 
 import chalk from "chalk";
 import arg from "arg";
-import Usage from "../src/config/usage.js";
-import getVideoInfo from "../src/commands/info.js";
-import downloadVideo from "../src/commands/download.js";
+import Usage from "../dist/config/usage.js";
+import getVideoInfo from "../dist/commands/info.js";
+import downloadVideo from "../dist/commands/download.js";
 
 try {
   const args = arg({
     "--info": String,
     "--download": String,
     "--help": Boolean,
+    "--version": Boolean,
   });
   if (args["--info"]) {
     console.log("");
@@ -20,8 +21,10 @@ try {
     downloadVideo(args["--download"]);
   } else if (args["--help"]) {
     Usage();
+  } else if (args["--version"]) {
+    console.log("\n", "yuta v1.0.6");
   } else {
-    console.log(`command not found`);
+    console.log(chalk.redBright(`command not found`));
     Usage();
   }
 } catch (error) {

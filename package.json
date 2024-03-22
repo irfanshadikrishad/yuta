@@ -1,9 +1,10 @@
 {
   "name": "yuta",
-  "version": "1.0.4",
+  "version": "1.0.6",
   "description": "CLI tool to download YouTube videos.",
   "main": "index.js",
-  "bin": "./bin/index.js",
+  "bin": "./bin/dist/index.js",
+  "types": "./dist/index.d.ts",
   "type": "module",
   "repository": {
     "type": "git",
@@ -11,6 +12,7 @@
   },
   "bugs": "https://github.com/irfanshadikrishad/yuta/issues",
   "scripts": {
+    "build": "rimraf bin && tsc -w",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "keywords": [
@@ -18,7 +20,8 @@
     "yotube video downloader",
     "yotube",
     "video",
-    "download"
+    "download",
+    "typescript"
   ],
   "author": "Irfan Shadik Rishad",
   "license": "ISC",
@@ -29,5 +32,10 @@
     "cli-table": "^0.3.11",
     "open-explorer-cross-platform": "^1.0.3",
     "ytdl-core": "^4.11.5"
+  },
+  "devDependencies": {
+    "@types/node": "^20.11.30",
+    "rimraf": "^5.0.5",
+    "typescript": "^5.4.3"
   }
 }
