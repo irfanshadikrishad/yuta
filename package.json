@@ -1,6 +1,6 @@
 {
   "name": "yuta",
-  "version": "1.0.6",
+  "version": "1.0.7",
   "description": "CLI tool to download YouTube videos.",
   "main": "index.js",
   "bin": "./bin/dist/index.js",
@@ -34,8 +34,8 @@
     "ytdl-core": "^4.11.5"
   },
   "devDependencies": {
-    "@types/node": "^20.11.30",
-    "rimraf": "^5.0.5",
-    "typescript": "^5.4.3"
+    "@types/node": "^20.14.10",
+    "rimraf": "^6.0.1",
+    "typescript": "^5.5.3"
   }
 }
