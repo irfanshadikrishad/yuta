@@ -15,7 +15,8 @@ export default async function downloadVideo(videoId) {
         if (isValidId) {
             const videoInfo = await ytdl.getInfo(videoId);
             const title = videoInfo.videoDetails.title;
-            console.log("\n", await getVideoInfo(videoId), "\n");
+            console.log("");
+            console.log(await getVideoInfo(videoId), "\n");
             start();
             ytdl
                 .downloadFromInfo(videoInfo)

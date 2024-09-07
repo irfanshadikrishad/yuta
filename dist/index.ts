@@ -12,6 +12,10 @@ try {
     "--download": String,
     "--help": Boolean,
     "--version": Boolean,
+    "-i": "--info",
+    "-d": "--download",
+    "-h": "--help",
+    "-v": "--version",
   });
   if (args["--info"]) {
     console.log("");
@@ -22,7 +26,7 @@ try {
   } else if (args["--help"]) {
     Usage();
   } else if (args["--version"]) {
-    console.log("\n", "yuta v1.0.6");
+    console.log("yuta v1.0.8");
   } else {
     console.log(chalk.redBright(`command not found`));
     Usage();

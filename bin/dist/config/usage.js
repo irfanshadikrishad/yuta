@@ -21,6 +21,6 @@ let usage = new Table({
 });
 export default function Usage() {
     console.log("");
-    usage.push(["Commands", "Usage"], ["--info [id]", "Get video info from video id."], ["--download [id]", "To download video with video id."], ["--version", "Get the version."], ["--help", "Get the available commands."]);
+    usage.push(["Commands", "Arguments", "Usage"], ["--info | -i", "[id]", "Get video info from video id."], ["--download | -d", "[id]", "To download video with video id."], ["--version | -v", "", "Get the version."], ["--help | -h", "", "Get the available commands."]);
     console.log(usage.toString(), "\n");
 }
